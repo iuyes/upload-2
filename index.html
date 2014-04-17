@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>aiShare</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=100">
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin" rel="stylesheet" type="text/css" >
+        <link href="css/upload.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="css/fancySelect.css" rel="stylesheet" />
+	</head>
+	
+	<body>
+
+		<h1><span>ai<b>Share</b></span> - tell people what's on your mind!</h1>
+
+		<div id="formContainer">
+			<form id="form">
+				<input type="text" placeholder="1">
+				<textarea placeholder="2"></textarea>
+				<div id="submitBlock">
+					<div id="showDnD" class="arrow1">Add Photo / Video</div>
+					<input type="submit" value="Post">
+					<div id="select">
+						<select class="fancySelect">
+	    					<option>All (Public)</option>
+	    					<option>Friends only</option>
+	    					<option>Professionals</option>
+	    				</select>
+	    			</div>
+				</div>
+			</form>
+			<div id="dndArea">
+				<!--img class="cloud" src="img/cloud.png">
+				<p><b>Drag & Drop</b> to upload</p>
+				<button id="selectFiles">or <b>Select Files</b></button-->
+			</div>
+		</div>
+
+		<script src="js/jquery.js"></script>
+		<script src="js/fancySelect.js"></script>
+		<script src="js/dragAndDrop.js"></script>
+		<script>
+			$(document).ready(function(){
+			    $('.fancySelect').fancySelect();
+
+			    $('#showDnD').click(function(){
+			    	if( $('#dndArea').is(':visible') ){
+			    		$('#showDnD').removeClass('arrow2');
+			    		$('#dndArea').slideUp({duration:600});
+			    	}else{
+			    		$('#showDnD').addClass('arrow2');
+			    		$('#dndArea').slideDown({duration:600});
+			    	}
+			    })
+			});
+		</script>
+	</body>
+</html>
